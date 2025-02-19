@@ -1,0 +1,257 @@
+form {
+    margin-inline: 8.125rem;
+    width: 560px;
+    height: 452px;
+    
+
+     }
+
+fieldset {
+
+    border: none;
+    display: grid;
+    gap: 1rem;
+
+}
+
+
+    
+
+
+legend {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    color: var(--text-head);
+    font: var(--head-sm);
+    padding: 24px;
+
+    
+}
+
+label {
+    font: var(--body-md);
+    color: var(--text-body);
+}
+
+
+
+
+
+     fieldset + fieldset {
+        margin-top: 3rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        
+        
+
+        & input[type="datetime-local" ]
+       
+        
+{   width: 272px;
+    height: 22px;
+    text-transform: uppercase;
+    color: var(--input-placeholder);
+    font: 400 var(--body-md);
+    &::-webkit-calendar-picker-indicator {
+        opacity: 0;
+        
+    }
+
+     }
+     
+
+      }
+
+      #data {
+
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--input-stroke);
+        & legend img {
+        height: 1.5rem;
+        width: 1.5rem;
+
+        
+      }
+
+       }
+
+       
+       input:not([type="radio"], [type="checkbox"]), textarea, data {
+        cursor: pointer;
+     appearance: none;
+    
+    border: 1px solid var(--input-stroke);
+    background-color: var(--input-base);
+    border-radius: .5rem;
+    height: 3rem;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .75rem;
+    color: var(--text-head);
+    font: 400 var(--body-md);
+    
+    }
+        
+         
+        
+       
+        input::placeholder, textarea::placeholder {
+            color: var(--input-placeholder);
+            font: 400 var(--body-md);
+           
+             }
+    
+             .input-wrapper {
+                & input:not(:focus):invalid {
+                    outline: 1px solid var(--danger);
+                }
+            
+                & input:not(:focus):invalid ~ .error {
+                    display: flex;
+                }
+            }  
+
+            .radio {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                  border: 1px solid var(--input-stroke);
+                  height: 3rem;
+                  border-radius: .5rem;
+                  background-color: var(--input-base);
+                  margin-top: .75rem;
+              
+                  .radio-select {
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      position: relative;
+                  gap: .5rem;
+              
+                  & svg {
+                      object-fit: cover;
+                      aspect-ratio: 1/1;
+                  }
+              
+                      & input, & input:hover, & input:focus {
+              
+                      position: absolute;
+                         appearance: none;
+                         height: 3rem;
+                         width: 100%;
+                         cursor: pointer;
+                      }
+              
+                      &:has(:checked) {
+                          border-radius: .25rem;
+                          margin: .25rem;
+                          color: var(--text-head);
+                          background-color: var(--shape-button);
+                           }
+                            }
+
+                     
+                     
+                     label {
+                        color: var(--text-head);
+                    
+                    
+                                & svg path {
+                                    stroke: var(--brand-light);
+                                }
+                            }
+                        }
+                            
+                                
+                                 textarea {
+                                    overflow: hidden;
+                                    height: 8.5rem;
+                                    
+                                }
+
+                                
+
+                                #style {
+
+                                    label {
+                                    font: 400 var(--body-sm);
+                                    color: var(--text-head);
+                                    }
+                                    
+                                    .flex {
+                                        display: flex;
+                                        justify-content: space-around;
+                                        gap: .75rem;
+                                        margin-block: 1rem 1.75rem;
+                                    }
+
+                                
+.content-radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+width: 3rem;
+height: 3rem;
+border-radius: 50%;
+background-color: var(--shape-button);
+
+& .color-radio {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+
+
+& input, & input:hover, & input:focus {
+        position: absolute;
+        appearance: none;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+
+}
+}
+
+&:has(:checked) {
+    outline: 3px solid var(--brand-light);
+}
+
+&:hover, &:focus-within {
+    background-color: var(--shape-hover);
+}
+
+}
+ }
+
+ .tematic {
+    display: grid;
+ }
+
+ .grid-2 {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+
+
+                            
+                                
+                                
+                    
+                        
+                    
+                    
+                    
+                    
+                    
+                    
+       
