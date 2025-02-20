@@ -24,8 +24,7 @@ legend {
     gap: .75rem;
     color: var(--text-head);
     font: var(--head-sm);
-    padding: 24px;
-
+    margin-bottom: 1.5rem;
     
 }
 
@@ -103,22 +102,25 @@ label {
          
         
        
-        input::placeholder, textarea::placeholder {
+        .input::placeholder, textarea::placeholder {
             color: var(--input-placeholder);
             font: 400 var(--body-md);
            
              }
     
              .input-wrapper {
+
                 & input:not(:focus):invalid {
                     outline: 1px solid var(--danger);
                 }
             
-                & input:not(:focus):invalid ~ .error {
+                & input :not(:focus) :invalid ~ .error {
                     display: flex;
+                    
                 }
-            }  
 
+                 }
+                 
             .radio {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -241,17 +243,104 @@ background-color: var(--shape-button);
     gap: 8px;
 }
 
+#light-plan {
+    display: flex;
+    gap: 6.5rem;
+    }
+    
+    .bright {
+        min-width: 11rem;
+        padding-right: 3.5rem;
+        & label {
+            display: block;
+            color: var(--text-body);
+            margin-bottom: .75rem;
+        }
+    
+        & .flex-2 {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+    
+            &:has(:checked) {
+                & .escuro {
+                    display: none;
+                }
+    
+                & .claro {
+                    display: unset;
+                }
 
+                
+             } 
+             & span {
+                font: 400 var(--body-sm);
+            color: var(--text-head);
+        }
+              }
+               }
 
-                            
-                                
-                                
+               #wallpap {
+                display: flex;
+               }
+
+               #fotocap {
+                color: var(--text-body);
+                font: 400 var(--body-sm);
+               }
+
+               .docfile {
+                display: flex;
+                margin-top: .75rem;
+                align-items: center;
+                gap: .75rem;
+                position: relative;
+
+                .docinpt {
+                    cursor: pointer;
+                    z-index: 1;
+                    background-color: var(--shape-button);
+                    height: 2.5rem;
+                    display: flex;
+                    align-items: center;
+                    padding: .75rem;
+                    gap: .5rem;
+                    border-radius: .5rem;
+                    font: 400 var(--body-sm);
+                    color: var(--text-head);
+
+                    &:hover {
+                        background-color: var(--shape-hover);
+                    }
+
                     
-                        
+                    & svg path {
+                        stroke: var(--brand-light);
+                    }
+                }
+
+                    & input {
+                        all: unset;
+                    &::file-selector-button { 
+                        display: none;
+                    }
+                        font: 400 var(--body-md);
+                        color: var(--input-placeholder);
+                    }
+                }
                     
                     
                     
                     
                     
                     
-       
+                    
+                    
+                    
+                    
+                    
+
+                    
+                
+
+               
