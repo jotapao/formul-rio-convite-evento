@@ -1,200 +1,187 @@
 form {
     margin-inline: 8.125rem;
-    width: 560px;
-    height: 452px;
-    
-
-     }
+    align-items: center;
 
 fieldset {
-
     border: none;
     display: grid;
     gap: 1rem;
 
-}
-
-
-    
-
-
 legend {
-    display: flex;
-    align-items: center;
-    gap: .75rem;
-    color: var(--text-head);
-    font: var(--head-sm);
-    margin-bottom: 1.5rem;
-    
-}
+display: flex;
+align-items: center;
+gap: .75rem;
+ color: var(--text-head);
+ font: var(--head-sm);
+ margin-bottom: 1.5rem;
 
 label {
-    font: var(--body-md);
-    color: var(--text-body);
+    display: block;
+}
+
+}
 }
 
 
+}
+
+input:not([type="radio"], [type="checkbox"]), textarea {
+    cursor: pointer;
+appearance: none;
+border: 1px solid var(--input-stroke);
+background-color: var(--input-base);
+border-radius: .5rem;
+height: 3rem;
+width: 100%;
+padding: 1rem;
+display: flex;
+align-items: center;
+gap: .5rem;
+margin-top: .75rem;
+color: var(--text-head);
+font: 400 var(--body-md);
+}
 
 
+input:not([type="radio"]):focus-within, textarea:focus-within {
+    outline: 1px solid var(--brand-light);
+}
 
-     fieldset + fieldset {
-        margin-top: 3rem;
+input::placeholder, textarea::placeholder {
+    color: var(--input-placeholder);
+    font: 400 var(--body-md);
+}
+
+.input-wrapper {
+    & input:not(:focus):invalid {
+        outline: 1px solid var(--danger);
     }
 
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-        
-        
+    & input:not(:focus):invalid ~ .error {
+        display: flex;
+    }
+}
 
-        & input[type="datetime-local" ]
-       
-        
-{   width: 272px;
-    height: 22px;
+.error {
+   
+    display: none;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .5rem;
+
+    & span {
+        color: var(--danger);
+        font: var(--body-xs);
+       }
+
+       img {
+        height: 1rem;
+        width: 1rem;
+    }
+
+}
+
+fieldset + fieldset {
+    margin-top: 3rem;
+}
+
+
+#event {
+
+label {
+    color: var(--text-body);
+    font: 400 var(--body-sm);
+}
+
+.grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1rem;
+
+& input[type="datetime-local"]
+{
     text-transform: uppercase;
     color: var(--input-placeholder);
     font: 400 var(--body-md);
     &::-webkit-calendar-picker-indicator {
         opacity: 0;
-        
     }
+}
 
-     }
-     
-
-      }
-
-      #data {
-
-        padding-bottom: 3rem;
-        border-bottom: 1px solid var(--input-stroke);
-        & legend img {
-        height: 1.5rem;
-        width: 1.5rem;
-
-        
-      }
-
-       }
-
-       
-       input:not([type="radio"], [type="checkbox"]), textarea, data {
-        cursor: pointer;
-     appearance: none;
-    
+.radio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
     border: 1px solid var(--input-stroke);
-    background-color: var(--input-base);
-    border-radius: .5rem;
     height: 3rem;
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    gap: .5rem;
+    border-radius: .5rem;
+    background-color: var(--input-base);
     margin-top: .75rem;
-    color: var(--text-head);
-    font: 400 var(--body-md);
-    
+
+    .radio-select {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    gap: .5rem;
+
+    & svg {
+        object-fit: cover;
+        aspect-ratio: 1/1;
     }
-        
-         
-        
-       
-        .input::placeholder, textarea::placeholder {
-            color: var(--input-placeholder);
-            font: 400 var(--body-md);
-           
-             }
-    
-             .input-wrapper {
 
-                & input:not(:focus):invalid {
-                    outline: 1px solid var(--danger);
-                }
-            
-                & input :not(:focus) :invalid ~ .error {
-                    display: flex;
-                    
-                }
+        & input, & input:hover, & input:focus {
 
-                 }
-                 
-            .radio {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                  border: 1px solid var(--input-stroke);
-                  height: 3rem;
-                  border-radius: .5rem;
-                  background-color: var(--input-base);
-                  margin-top: .75rem;
-              
-                  .radio-select {
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      position: relative;
-                  gap: .5rem;
-              
-                  & svg {
-                      object-fit: cover;
-                      aspect-ratio: 1/1;
-                  }
-              
-                      & input, & input:hover, & input:focus {
-              
-                      position: absolute;
-                         appearance: none;
-                         height: 3rem;
-                         width: 100%;
-                         cursor: pointer;
-                      }
-              
-                      &:has(:checked) {
-                          border-radius: .25rem;
-                          margin: .25rem;
-                          color: var(--text-head);
-                          background-color: var(--shape-button);
-                           }
-                            }
+        position: absolute;
+           appearance: none;
+           height: 3rem;
+           width: 100%;
+           cursor: pointer;
+        }
 
-                     
-                     
-                     label {
-                        color: var(--text-head);
-                    
-                    
-                                & svg path {
-                                    stroke: var(--brand-light);
-                                }
-                            }
-                        }
-                            
-                                
-                                 textarea {
-                                    overflow: hidden;
-                                    height: 8.5rem;
-                                    
-                                }
+        &:has(:checked) {
+            border-radius: .25rem;
+            margin: .25rem;
+            color: var(--text-head);
+            background-color: var(--shape-button);
 
-                                
+label {
+    color: var(--text-head);
+}
 
-                                #style {
+            & svg path {
+                stroke: var(--brand-light);
+            }
+        }
 
-                                    label {
-                                    font: 400 var(--body-sm);
-                                    color: var(--text-head);
-                                    }
-                                    
-                                    .flex {
-                                        display: flex;
-                                        justify-content: space-around;
-                                        gap: .75rem;
-                                        margin-block: 1rem 1.75rem;
-                                    }
+    }
 
-                                
+}
+
+
+}
+
+& textarea {
+    overflow: hidden;
+    height: 8.5rem;
+}
+
+
+}
+
+#style {
+
+label {
+font: 400 var(--body-sm);
+color: var(--text-head);
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+    gap: .75rem;
+    margin-block: 1rem 1.75rem;
+}
+
 .content-radio {
     display: flex;
     align-items: center;
@@ -230,104 +217,309 @@ background-color: var(--shape-button);
 }
 
 }
- }
 
- .tematic {
-    display: grid;
- }
-
- .grid-2 {
+.grid {
     margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
 }
 
+
 #light-plan {
-    display: flex;
-    gap: 6.5rem;
+display: flex;
+gap: 6.5rem;
+}
+
+.bright {
+    min-width: 11rem;
+    padding-right: 3.5rem;
+    & label {
+        display: block;
+        color: var(--text-body);
+        margin-bottom: .75rem;
     }
-    
-    .bright {
-        min-width: 11rem;
-        padding-right: 3.5rem;
-        & label {
-            display: block;
-            color: var(--text-body);
-            margin-bottom: .75rem;
+
+    & .flex-2 {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+
+        &:has(:checked) {
+            & .escuro {
+                display: none;
+            }
+
+            & .claro {
+                display: unset;
+            }
         }
-    
-        & .flex-2 {
-            display: flex;
-            align-items: center;
-            gap: .75rem;
-    
-            &:has(:checked) {
-                & .escuro {
-                    display: none;
-                }
-    
-                & .claro {
-                    display: unset;
-                }
+
+& span {
+    font: 400 var(--body-sm);
+color: var(--text-head);
+}
+
+.claro {
+    display: none;
+}
+
+    }
+
+& .ipt {
+    display: grid;
+    align-items: center;
+    position: relative;
+    background-color: var(--input-base);
+    width: 4rem;
+    height: 2rem;
+    border-radius: 999px;
+    border: 1px solid var(--input-stroke);
+
+
+& input {
+
+    all: unset;
+    position: absolute;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: var(--input-stroke);
+    border-radius: 50%;
+    margin: .25rem;
+cursor: pointer;
+}
+
+&:has(:checked) {
+    background-color: var(--brand-light);
+   & input {
+background-color: var(--text-head);
+justify-self: end;
+
+}
+}
+
+}
+
+}
+
+#wallpap {
+    display: flex;
+}
+#fotocap {
+    color: var(--text-body);
+    font: 400 var(--body-sm);
+}
+
+
+.docfile {
+margin-top: .75rem;
+display: flex;
+align-items: center;
+gap: .75rem;
+position: relative;
+
+.docinpt {
+    cursor: pointer;
+    z-index: 1;
+background-color: var(--shape-button);
+height: 2.5rem;
+
+display: flex;
+align-items: center;
+padding: .75rem;
+gap: .5rem;
+border-radius: .5rem;
+font: 400 var(--body-sm);
+color: var(--text-head);
+
+&:hover {
+    background-color: var(--shape-hover);
+
+& svg path {
+    stroke: var(--brand-light);
+}
+
+}
+
+}
+
+
+& input {
+    all: unset;
+&::file-selector-button {
+    display: none;
+}
+    font: 400 var(--body-md);
+    color: var(--input-placeholder);
+}
+
+
+
+}
+
+
+}
+
+#data {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--input-stroke);
+& legend img {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+label {
+    font: 400 var(--body-sm);
+    color: var(--text-body);
+}
+.requid {
+
+    & .danger {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        margin-top: .5rem;
+
+        & span {
+            color: var(--danger);
+            font: var(--body-xs);
+           }
+
+           img {
+            height: 1rem;
+            width: 1rem;
+        }
+
+    }
+
+
+
+
+& input {
+    &:invalid {
+        border: 1px solid var(--danger);
+    }
+
+    &:focus-within {
+        border: none;
+    }
+
+&:valid + .danger, &:focus-within + .danger {
+        display: none;
+}
+
+
+}
+
+}
+& .colum {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+margin-top: 1rem;
+}
+
+
+
+}
+
+#checks {
+    padding-top: 2.5rem;
+display: grid;
+gap: .5rem;
+
+& label {
+    font: 400 var(--body-sm);
+    color: var(--text-body);
+}
+
+& a {
+    color: var(--brand-light);
+
+    &:hover {
+        color: var(--brand-mid);
+    }
+}
+
+ & .align {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+& .box {
+
+    background-color: var(--input-base);
+position: relative;
+height: 1.25rem;
+width: 1.25rem;
+border: 1px solid var(--input-stroke);
+border-radius: .25rem;
+
+
+
+& input {
+    all: unset;
+appearance: none;
+position: absolute;
+width: 100%;
+height: 100%;
+cursor: pointer;
+}
+
+&:has(:checked) {
+    background-image: url(/Assets/check.png);
+    background-size: cover;
+    border: 1px solid var(--brand-light);
+    border-radius: .25rem;
+
+}
+
+}
+
+ }
+
+#upload {
+    margin-inline: auto 0;
+    margin-block: 3rem 5rem;
+    background-color: var(--brand-dark);
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .75rem 1.25rem;
+    height: 3rem;
+    width: 11rem;
+border-radius: .5rem;
+cursor: pointer;
+
+& img {
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+& button {
+    all: unset;
+   font: 500 var(--body-md);
+   color: var(--text-head);
+}
+
+&:hover {
+    background-color: var(--brand-mid);
+}
+
+}
+
+.tematic {
+margin-top: 28px;
+margin-bottom: 28px;
+}
+            
+
+            
 
                 
-             } 
-             & span {
-                font: 400 var(--body-sm);
-            color: var(--text-head);
-        }
-              }
-               }
 
-               #wallpap {
-                display: flex;
-               }
-
-               #fotocap {
-                color: var(--text-body);
-                font: 400 var(--body-sm);
-               }
-
-               .docfile {
-                display: flex;
-                margin-top: .75rem;
-                align-items: center;
-                gap: .75rem;
-                position: relative;
-
-                .docinpt {
-                    cursor: pointer;
-                    z-index: 1;
-                    background-color: var(--shape-button);
-                    height: 2.5rem;
-                    display: flex;
-                    align-items: center;
-                    padding: .75rem;
-                    gap: .5rem;
-                    border-radius: .5rem;
-                    font: 400 var(--body-sm);
-                    color: var(--text-head);
-
-                    &:hover {
-                        background-color: var(--shape-hover);
-                    }
-
-                    
-                    & svg path {
-                        stroke: var(--brand-light);
-                    }
-                }
-
-                    & input {
-                        all: unset;
-                    &::file-selector-button { 
-                        display: none;
-                    }
-                        font: 400 var(--body-md);
-                        color: var(--input-placeholder);
-                    }
-                }
+               
                     
                     
                     
